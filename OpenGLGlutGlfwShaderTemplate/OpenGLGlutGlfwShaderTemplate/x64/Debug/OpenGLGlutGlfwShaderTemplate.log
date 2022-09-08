@@ -1,0 +1,5 @@
+﻿  prepShader.cpp
+C:\Users\flynn\OneDrive - George Brown College\Third Semester\3D Graphics Programming\OpenGL\OpenGLGlutGlfwShaderTemplate\OpenGLGlutGlfwShaderTemplate\prepShader.cpp(16,19): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+  testGlutWithShader.cpp
+  Generating Code...
+  OpenGLGlutGlfwShaderTemplate.vcxproj -> C:\Users\flynn\OneDrive - George Brown College\Third Semester\3D Graphics Programming\OpenGL\OpenGLGlutGlfwShaderTemplate\x64\Debug\OpenGLGlutGlfwShaderTemplate.exe
