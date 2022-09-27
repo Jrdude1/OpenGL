@@ -15,19 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="testGlut.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testGlFW.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="prepShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testGlutWithShader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testGlfwWithShader.cpp">
+    <ClCompile Include="week2-6-DynamicTriangles-mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -37,10 +28,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cube.frag">
+    <None Include="triangles.frag">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="cube.vert">
+    <None Include="triangles.vert">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

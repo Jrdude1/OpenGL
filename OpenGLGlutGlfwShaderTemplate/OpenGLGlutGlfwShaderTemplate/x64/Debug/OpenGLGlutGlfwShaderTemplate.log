@@ -1,2 +1,5 @@
-﻿  testGlutWithShader.cpp
-  OpenGLGlutGlfwShaderTemplate.vcxproj -> C:\Users\flynn\OneDrive - George Brown College\Third Semester\3D Graphics Programming\OpenGL\OpenGLGlutGlfwShaderTemplate\x64\Debug\OpenGLGlutGlfwShaderTemplate.exe
+﻿  prepShader.cpp
+C:\Users\Jack\Desktop\Third Semester\3D Graphics Programming\OpenGL\OpenGLGlutGlfwShaderTemplate\OpenGLGlutGlfwShaderTemplate\prepShader.cpp(5,10): fatal  error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  week2-6-DynamicTriangles-mouse.cpp
+C:\Users\Jack\Desktop\Third Semester\3D Graphics Programming\OpenGL\OpenGLGlutGlfwShaderTemplate\OpenGLGlutGlfwShaderTemplate\week2-6-DynamicTriangles-mouse.cpp(25,10): fatal  error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  Generating Code...

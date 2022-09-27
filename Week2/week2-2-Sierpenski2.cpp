@@ -19,7 +19,7 @@ using namespace std;
 GLuint Buffers[1];
 
 const GLuint NumVertices = 90000;
-const GLfloat scale = 0.5f;
+const GLfloat scale = 0.9f;
 GLfloat vertices[NumVertices][3] = { 0 };
 std::array<glm::vec3, NumVertices> vertices1;
 

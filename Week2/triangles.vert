@@ -9,5 +9,5 @@ void main()
 {
 	gl_Position = vec4(vertex_position, 1.0);
 	color = vertex_color;
-	//color = vec3((1.0 + vertex_position.xyz)/2.0);
+	color = vec3((1.0 + vertex_position.xyz)/2.0);
 }
