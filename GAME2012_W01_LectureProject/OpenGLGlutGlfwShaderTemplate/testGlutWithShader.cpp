@@ -1,10 +1,11 @@
 //***************************************************************************
-// Filename.cpp by Name - ID
+// GAME2012 - Assignment1 by Jack Flynn - 101367940
 //
 // Assignment 1 submission.
 //
 // Description:
-//	Click run to see the results.
+// Click run to see the results.
+//
 //*****************************************************************************
 
 ////http://glew.sourceforge.net/
