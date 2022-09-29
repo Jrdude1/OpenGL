@@ -51,6 +51,23 @@ GLuint Buffers[1];
 const GLuint NumVertices = 4;
 GLfloat vertices[NumVertices][2];
 
+GLuint vao, points_vbo, colors_vbo;
+
+GLfloat points[] = {
+	-0.9f, 0.9f, 0.0f,
+	0.9f, 0.9f, 0.0f,
+	0.9f, -0.9f, 0.0f,
+	-0.9f, -0.9f, 0.0f
+
+};
+
+GLfloat colors[] = {
+	1.0f, 0.0f, 0.0f,
+	1.0f, 0.0f, 0.0f,
+	1.0f, 0.0f, 0.0f,
+	1.0f, 0.0f, 0.0f
+};
+
 static unsigned int
 program,
 vertexShaderId,
@@ -69,13 +86,28 @@ void init(void)
 	glLinkProgram(program);
 	glUseProgram(program);
 
-	//Generating two buffers, one is used to store the coordinates of the vertices
-	//The other one is not used. Just wanted to show that we can allocate as many as buffers, some of which might left unused.
-	glGenBuffers(2, Buffers);
-	glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
-	glBindAttribLocation(program, 0, "vPosition");
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+
+	vao = 0;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+
+	points_vbo = 0;
+	glGenBuffers(1, &points_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, points_vbo);
+	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), points, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 	glEnableVertexAttribArray(0);
+
+	colors_vbo = 0;
+	glGenBuffers(1, &colors_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, colors_vbo);
+	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), colors, GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+	glEnableVertexAttribArray(1);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 
 	timer(0);
 }
@@ -91,25 +123,15 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	//what if you jusy wanted to see just edges and not a filled polygon, then uncomment this
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	//Selecting the buffer
-	glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
 
-	//Randomizing vertices coordinates
-	for (int i = 0; i < NumVertices; i++)
-	{
-		float x = (rand() % 200 + 1) / 100.0f - 1;
-		float y = (rand() % 200 + 1) / 100.0f - 1;
-		vertices[i][0] = x;
-		vertices[i][1] = y;
-	}
+	glBindVertexArray(vao);
 
-	//Pushing the coordinates of the vertices into the buffer
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
 
 	//Ordering the GPU to start the pipeline
-	glDrawArrays(GL_LINE_STRIP, 0, NumVertices);
+	glDrawArrays(GL_QUADS, 0, 4);
 
 	glFlush();
 }
@@ -149,10 +171,10 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_RGBA);
 
 	//if you comment out this line, a window is created with a default size
-	glutInitWindowSize(512, 512);
+	glutInitWindowSize(768, 768);
 
 	//the top-left corner of the display
-	glutInitWindowPosition(0, 0);
+	glutInitWindowPosition(550, 100);
 
 	glutCreateWindow("Flynn, Jack, 101367940");
 

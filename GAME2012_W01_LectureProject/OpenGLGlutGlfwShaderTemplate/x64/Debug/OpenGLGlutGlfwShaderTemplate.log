@@ -1,6 +1,2 @@
-﻿  prepShader.cpp
-C:\Users\flynn\Desktop\Third Semester\3D Graphics Programming\OpenGL\GAME2012_W01_LectureProject\OpenGLGlutGlfwShaderTemplate\prepShader.cpp(16,19): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-  testGlutWithShader.cpp
-  Generating Code...
-  LINK : C:\Users\flynn\Desktop\Third Semester\3D Graphics Programming\OpenGL\GAME2012_W01_LectureProject\x64\Debug\OpenGLGlutGlfwShaderTemplate.exe not found or not built by the last incremental link; performing full link
+﻿  testGlutWithShader.cpp
   OpenGLGlutGlfwShaderTemplate.vcxproj -> C:\Users\flynn\Desktop\Third Semester\3D Graphics Programming\OpenGL\GAME2012_W01_LectureProject\x64\Debug\OpenGLGlutGlfwShaderTemplate.exe
