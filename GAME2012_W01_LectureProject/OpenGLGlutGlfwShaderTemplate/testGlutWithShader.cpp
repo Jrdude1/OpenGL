@@ -131,7 +131,7 @@ void display(void)
 
 
 	//Ordering the GPU to start the pipeline
-	glDrawArrays(GL_QUADS, 0, 4);
+	glDrawArrays(GL_LINE_LOOP, 0, 4);
 
 	glFlush();
 }
