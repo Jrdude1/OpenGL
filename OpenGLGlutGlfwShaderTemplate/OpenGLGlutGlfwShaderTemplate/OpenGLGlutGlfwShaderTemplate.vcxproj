@@ -19,15 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Week4\testGlFW.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Week4\testGlut.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Week4\Week4-1-FrameIndependentDemo.cpp" />
     <ClCompile Include="prepShader.cpp" />
-    <ClCompile Include="week2-6-DynamicTriangles-mouse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="prepShader.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="triangles.frag" />
-    <None Include="triangles.vert" />
+    <None Include="..\..\Week4\cube.frag" />
+    <None Include="..\..\Week4\cube.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

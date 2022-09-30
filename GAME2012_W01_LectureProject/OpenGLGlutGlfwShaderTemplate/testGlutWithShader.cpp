@@ -125,10 +125,7 @@ void display(void)
 	//what if you jusy wanted to see just edges and not a filled polygon, then uncomment this
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-
 	glBindVertexArray(vao);
-
-
 
 	//Ordering the GPU to start the pipeline
 	glDrawArrays(GL_LINE_LOOP, 0, 4);

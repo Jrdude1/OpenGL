@@ -34,23 +34,21 @@ fragmentShaderId;
 
 GLshort cube_indices[] = {
 	// Front.
-	2, 1, 0,
-	0, 3, 2,
-	// Left.
-	3, 0, 4,
-	4, 7, 3,
-	// Bottom.
-	0, 1, 5,
-	5, 4, 0,
-	// Right.
-	1, 2, 6,
+	0, 1, 2,
+	3, 0, 2,
+	// Right
 	6, 5, 1,
-	// Back.
-	5, 6, 7,
-	7, 4, 5,
+	6, 2,
 	// Top.
-	6, 2, 3,
-	3, 7, 6
+	3, 7, 6,
+	3,
+	// left.
+	7, 4, 0,
+	7,
+	// Back.
+	5,4,
+	// Top.
+	1,
 };
 
 GLfloat cube_vertices[] = {
@@ -128,7 +126,7 @@ void init(void)
 // transformModel
 //
 
-void transformObject(float scale, glm::vec3 rotationAxis, float rotationAngle, glm::vec3 translation) {
+void transformObject(glm::vec3 scale, glm::vec3 rotationAxis, float rotationAngle, glm::vec3 translation) {
 	glm::mat4 Model;
 	Model = glm::mat4(1.0f);
 	Model = glm::translate(Model, translation);
@@ -153,11 +151,11 @@ void display(void)
 
 	glBindVertexArray(vao);
 
-	transformObject(0.4f, YZ_AXIS, rotAngle -= ((float)10 / (float)1000 * deltaTime), 
+	transformObject(glm::vec3(0.4f, 1.0f, 0.5f), YZ_AXIS, rotAngle -= ((float)10 / (float)1000 * deltaTime), 
 		glm::vec3(0.0f, 0.0f, 0.0f));
 
 	//Ordering the GPU to start the pipeline
-	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, 0); // Try GL_LINE_STRIP too!
+	glDrawElements(GL_LINE_LOOP, 22, GL_UNSIGNED_SHORT, 0); // Try GL_LINE_STRIP too!
 
 	glBindVertexArray(0); // Can optionally unbind the vertex array to avoid modification.
 

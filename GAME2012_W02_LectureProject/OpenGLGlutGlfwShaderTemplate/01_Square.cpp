@@ -43,7 +43,7 @@ using namespace std;
 #include <string>
 
 #define BUFFER_OFFSET(x)  ((const void*) (x))
-#define FPS 5
+#define FPS 1
 
 GLuint Buffers[1];
 const GLuint NumVertices = 4;
@@ -127,7 +127,7 @@ void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glBindVertexArray(vao);
 		
 		// Optional, just showing how to change data in a buffer.
